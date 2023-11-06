@@ -1,0 +1,24 @@
+<!-- livre-list.component.html -->
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>Liste des Livres</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field>
+        <input matInput [(ngModel)]="recherche" placeholder="Rechercher des livres">
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="chercher()">Rechercher</button>
+      <ul>
+        <li *ngFor="let livre of livres">
+          <mat-card>
+            <img mat-card-image [src]="livre.volumeInfo.imageLinks.thumbnail" alt="{{ livre.volumeInfo.title }}">
+            <mat-card-content>
+              <h2>{{ livre.volumeInfo.title }}</h2>
+              <p>Auteur(s): {{ livre.volumeInfo.authors.join(', ') }}</p>
+              <p>Année de publication: {{ livre.volumeInfo.publishedDate }}</p>
+            </mat-card-content>
+          </mat-card>
+        </li>
+      </ul>
+    </mat-card-content>
+  </mat-card>  

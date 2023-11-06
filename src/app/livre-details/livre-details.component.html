@@ -1,0 +1,18 @@
+<!-- livre-details.component.html -->
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>Détails du Livre</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div *ngIf="livre">
+        <h2>{{ livre.volumeInfo.title }}</h2>
+        <p>Auteur(s): {{ livre.volumeInfo.authors.join(', ') }}</p>
+        <p>Année de publication: {{ livre.volumeInfo.publishedDate }}</p>
+        <p>Pages: {{ livre.volumeInfo.pageCount }}</p>
+        <p>Editeur: {{ livre.volumeInfo.publisher }}</p>
+        <p>Langue: {{ livre.volumeInfo.language }}</p>
+        <p>{{ livre.volumeInfo.description }}</p>
+      </div>
+    </mat-card-content>
+</mat-card>
+  
